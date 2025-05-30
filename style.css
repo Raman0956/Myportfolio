@@ -1,0 +1,319 @@
+/* Custom CSS for Ramandeep Kaur's Portfolio */
+
+/* General Styles */
+:root {
+    --primary: #0a66c2;
+    --secondary: #16a34a;
+    --accent: #f59e0b;
+    --dark: #212529;
+    --light: #f8f9fa;
+    --white: #ffffff;
+    --gray: #6c757d;
+    --border-radius: 0.5rem;
+    --box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    --transition: all 0.3s ease;
+    --font-primary: 'Inter', sans-serif;
+    --font-secondary: 'Roboto', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px; /* Account for fixed header */
+}
+
+body {
+    font-family: var(--font-secondary);
+    color: var(--dark);
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-primary);
+}
+
+/* Utility Classes */
+.hover-shadow:hover {
+    box-shadow: var(--box-shadow) !important;
+    transform: translateY(-5px);
+    transition: var(--transition);
+}
+
+.title-underline {
+    height: 4px;
+    width: 80px;
+    background-color: var(--primary);
+    margin: 1rem auto 2rem;
+    border-radius: 2px;
+}
+
+.list-style-bullet li {
+    margin-bottom: 0.75rem;
+    line-height: 1.6;
+}
+
+/* Header Styles */
+#header {
+    transition: var(--transition);
+    z-index: 1000;
+}
+
+.navbar {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    transition: var(--transition);
+}
+
+.navbar-brand {
+    font-size: 1.75rem;
+    color: var(--primary) !important;
+}
+
+.nav-link {
+    font-weight: 500;
+    padding: 0.5rem 1rem !important;
+    position: relative;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary);
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 70%;
+}
+
+/* Hero Section */
+.hero-section {
+    min-height: 100vh;
+    background: linear-gradient(to right, var(--white), #f0f7ff);
+    padding-top: 100px;
+    padding-bottom: 80px;
+}
+
+.hero-section h1 {
+    font-weight: 700;
+}
+
+.hero-section img {
+    max-width: 90%;
+    border-radius: 1rem;
+    box-shadow: var(--box-shadow);
+}
+
+/* About Section */
+.about-section {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Experience Section */
+.experience-item {
+    margin-bottom: 2rem;
+    transition: var(--transition);
+}
+
+.icon-box {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(10, 102, 194, 0.1);
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Projects Section */
+.project-image {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.project-image .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 60%);
+}
+
+.card:hover .project-image img {
+    transform: scale(1.1);
+}
+
+/* Education Section */
+.edu-icon-box {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: var(--primary);
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+}
+
+.cert-icon-box {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(10, 102, 194, 0.1);
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Skills Section */
+.skill-card {
+    background-color: var(--white);
+    border-radius: var(--border-radius);
+    padding: 1.5rem 1rem;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    height: 100%;
+    transition: var(--transition);
+    border: 1px solid rgba(0,0,0,0.08);
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+
+.skill-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: rgba(10, 102, 194, 0.1);
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+    font-size: 1.5rem;
+}
+
+.skill-icon.development {
+    background-color: rgba(22, 163, 74, 0.1);
+    color: var(--secondary);
+}
+
+.skill-icon.category {
+    background-color: rgba(245, 158, 11, 0.1);
+    color: var(--accent);
+}
+
+/* Contact Section */
+.contact-icon-box {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: var(--primary);
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+}
+
+.social-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    transition: var(--transition);
+    color: var(--white);
+}
+
+.social-icon.github {
+    background-color: #333333;
+}
+
+.social-icon.linkedin {
+    background-color: #0077b5;
+}
+
+.social-icon.email {
+    background-color: var(--primary);
+}
+
+.social-icon:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    opacity: 0.9;
+}
+
+/* Back to Top Button */
+.back-to-top {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    display: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: var(--primary);
+    color: var(--white);
+    justify-content: center;
+    align-items: center;
+    z-index: 99;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+.back-to-top.show {
+    display: flex;
+}
+
+/* Media Queries */
+@media (max-width: 991.98px) {
+    .hero-section {
+        padding-top: 120px;
+        padding-bottom: 60px;
+    }
+    
+    .hero-section img {
+        margin-top: 3rem;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .navbar-nav {
+        margin-top: 1rem;
+    }
+    
+    .nav-link {
+        padding: 0.75rem 0 !important;
+        text-align: center;
+    }
+    
+    .nav-link::after {
+        bottom: 5px;
+    }
+    
+    .hero-section h1 {
+        font-size: 2.5rem;
+    }
+}
