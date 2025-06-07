@@ -66,30 +66,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Handle contact form submission
-    const contactForm = document.getElementById('contactForm');
-    
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Get form data
-            const name = document.getElementById('nameInput').value;
-            const email = document.getElementById('emailInput').value;
-            const subject = document.getElementById('subjectInput').value;
-            const message = document.getElementById('messageInput').value;
-            
-            // Here you would normally send the data to a server
-            // Since this is a static HTML site, we'll just simulate success with an alert
-            
-            // Display success message (you can replace this with a better UI notification)
-            alert(`Thank you, ${name}! Your message has been received. I'll get back to you soon.`);
-            
-            // Reset form
-            contactForm.reset();
-        });
-    }
-    
     // Mobile nav toggle
     const navbarToggler = document.querySelector('.navbar-toggler');
     const navbarCollapse = document.querySelector('.navbar-collapse');
